@@ -1,193 +1,151 @@
+Claro, Rafhael! Aqui está um modelo de `README.md` bem organizado para o seu repositório do Neovim com LazyVim/Packer, explicando passo a passo como instalar e usar sua configuração:
+
+---
+
 ````markdown
-# Configurações do Neovim
+# ⚙️ Neovim Config by Rafhael Rocha Gomes
 
-Este repositório contém minhas configurações pessoais do Neovim, incluindo a configuração de **Packer** para gerenciar os plugins de forma eficiente. Siga os passos abaixo para configurar seu Neovim com estas configurações.
+Configuração personalizada do Neovim com foco em produtividade, autocompletar com LSP, interface moderna e plugins essenciais para desenvolvimento com TypeScript, Go, Python, Java, C/C++, e mais.
 
-## Pré-requisitos
+## ✨ Funcionalidades
 
-Antes de começar, você precisará dos seguintes itens instalados no seu sistema:
+- Autocompletar com `nvim-cmp`
+- Suporte a múltiplos LSPs via `mason`
+- Navegação de arquivos com `nvim-tree`
+- Fuzzy Finder com `telescope`
+- Tema `tokyonight-night` com `onedark.nvim`
+- Barra de status estilizada com `staline`
+- Snippets com `LuaSnip`
+- Ícones com `nvim-web-devicons`
+- Atalhos úteis para produtividade
 
-1. **Neovim** (v0.5 ou superior).
-2. **Git** para clonar o repositório.
+---
 
-### Instalando o Neovim
+## 🧱 Requisitos
 
-Caso ainda não tenha o **Neovim** instalado, siga as instruções no [site oficial](https://neovim.io/) para o seu sistema operacional.
-
-### Instalando o Git
-
-Se o **Git** não estiver instalado, você pode instalar com o seguinte comando:
-
-#### Para sistemas baseados no Debian (Ubuntu, etc.):
+- [Neovim >= 0.8](https://github.com/neovim/neovim/releases)
+- [git](https://git-scm.com)
+- [Node.js](https://nodejs.org) (para alguns LSPs)
+- [Packer](https://github.com/wbthomason/packer.nvim) instalado em `~/.local/share/nvim/site/pack/packer/start/packer.nvim`
 
 ```bash
-sudo apt install git
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ````
 
-#### Para sistemas baseados no Red Hat (Fedora, etc.):
+---
+
+## 🚀 Instalação
 
 ```bash
-sudo dnf install git
-```
+# Clone o repositório
+git clone https://github.com/seu-usuario/seu-repositorio-nvim-config.git ~/.config/nvim
 
-#### Para sistemas macOS:
-
-```bash
-brew install git
-```
-
-## Como usar
-
-### Passo 1: Clonar este repositório
-
-Clone o repositório contendo as configurações do Neovim para o diretório correto:
-
-```bash
-git clone https://github.com/YOUR_USERNAME/nvim-configs.git ~/.config/nvim
-```
-
-Substitua `YOUR_USERNAME` pelo seu nome de usuário no GitHub.
-
-### Passo 2: Instalar o Packer
-
-O **Packer** é um gerenciador de plugins para o Neovim. Para instalá-lo, execute o seguinte comando:
-
-```bash
-git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-    ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-```
-
-Isso instalará o **Packer** em seu sistema.
-
-### Passo 3: Instalar os plugins
-
-Depois de clonar o repositório e instalar o Packer, abra o Neovim:
-
-```bash
+# Abra o Neovim e instale os plugins
 nvim
 ```
 
-Dentro do Neovim, execute o seguinte comando para instalar todos os plugins definidos nas configurações:
+Dentro do Neovim, rode:
 
 ```vim
 :PackerSync
 ```
 
-Este comando irá sincronizar os plugins listados no arquivo de configuração, baixando e instalando todos os necessários.
+> Isso instalará automaticamente todos os plugins.
 
-### Passo 4: Usar as configurações
+---
 
-Agora, suas configurações estarão prontas para uso. Alguns atalhos de teclado já foram configurados para facilitar a navegação e o uso de funcionalidades populares, como:
+## 🧠 LSPs Instalados
 
-* **Ctrl + p**: Abrir o **Telescope** para pesquisa de arquivos.
-* **Ctrl + b**: Abrir/fechar o **Nvim-Tree**.
+Esses LSPs são configurados automaticamente com `mason` e `lspconfig`:
 
-### Passo 5: Atualizar os plugins
+* `tsserver` (JavaScript/TypeScript)
+* `gopls` (Go)
+* `pyright` (Python)
+* `jdtls` (Java)
+* `clangd` (C/C++)
 
-Para garantir que seus plugins estejam sempre atualizados, execute o seguinte comando no Neovim:
-
-```vim
-:PackerUpdate
-```
-
-Isso atualizará todos os plugins para as versões mais recentes.
-
-### Passo 6: Remover plugins desnecessários
-
-Se você remover algum plugin do arquivo de configuração `init.lua`, execute o seguinte comando para limpar os plugins não utilizados:
+Você pode gerenciar a instalação deles com o comando:
 
 ```vim
-:PackerClean
+:Mason
 ```
 
-### Como adicionar novos plugins
+---
 
-Para adicionar novos plugins ao seu Neovim, edite o arquivo `init.lua` e adicione o plugin desejado dentro do bloco `packer`:
+## ⌨️ Atalhos Úteis
+
+| Atalho     | Ação                                     |
+| ---------- | ---------------------------------------- |
+| `Ctrl + s` | Salvar arquivo                           |
+| `Ctrl + b` | Alternar o `nvim-tree`                   |
+| `Ctrl + p` | Abrir o `Telescope` para buscar arquivos |
+| `q`        | Sair do Neovim                           |
+| `Ctrl + a` | Selecionar todo o conteúdo do buffer     |
+| `gd`       | Ir para definição                        |
+| `gr`       | Procurar referências                     |
+| `gi`       | Ir para implementação                    |
+| `K`        | Mostrar documentação da função           |
+
+---
+
+## 🎨 Temas
+
+Atualmente, está sendo usado:
+
+* `tokyonight-night` (ativo)
+* `onedark.nvim` (carregado para estilo de LSP e outros componentes)
+
+Você pode alterar a linha final em `settings.lua` para trocar o tema:
 
 ```lua
-use 'plugin/novo-plugin'
+vim.cmd[[colorscheme tokyonight-night]]
+-- ou
+vim.cmd[[colorscheme onedark]]
 ```
 
-Depois de adicionar o novo plugin, execute o comando:
+---
+
+## 📁 Estrutura do Projeto
+
+```
+~/.config/nvim/
+├── init.lua
+├── lua/
+│   ├── settings.lua
+│   ├── mappings.lua
+│   └── plugins/
+│       └── plugins.lua
+```
+
+---
+
+## 🛠️ Manutenção
+
+### Atualizar Plugins
+
+Dentro do Neovim:
 
 ```vim
 :PackerSync
 ```
 
-Isso irá baixar e instalar o novo plugin.
+### Recompilar plugins ao alterar `plugins.lua`
 
-### Como remover plugins
-
-Para remover um plugin, basta deletá-lo do bloco `use` no arquivo `init.lua` e rodar o comando:
-
-```vim
-:PackerClean
-```
-
-### Como configurar novos atalhos de teclado
-
-Se você quiser adicionar ou modificar atalhos de teclado no seu Neovim, edite a seção de mapeamentos no arquivo de configuração `init.lua` e adicione novos atalhos conforme necessário.
-
-Por exemplo, para adicionar um atalho para abrir a pesquisa do Telescope, adicione o seguinte no arquivo `init.lua`:
+Ao salvar o arquivo `plugins.lua`, o `PackerCompile` é automaticamente executado por este autocomando:
 
 ```lua
-vim.api.nvim_set_keymap('n', '<C-p>', ':Telescope find_files<CR>', { noremap = true, silent = true })
+autocmd BufWritePost plugins.lua source <afile> | PackerCompile
 ```
 
-### Backup e Sincronização
+---
 
-Para garantir que suas configurações estejam sempre seguras e sincronizadas entre diferentes máquinas, basta usar **Git** para versionar suas configurações. Você pode adicionar, fazer commit e enviar suas configurações para o repositório Git da seguinte forma:
+## 🧠 Dica
 
-1. Adicione as alterações ao Git:
+Recomenda-se utilizar um terminal com suporte a **true colors** e **fontes com ícones Nerd Fonts** (como `FiraCode Nerd Font` ou `JetBrainsMono Nerd Font`).
 
-   ```bash
-   git add .
-   ```
+---
 
-2. Faça um commit explicativo:
+## 🧔 Autor
 
-   ```bash
-   git commit -m "Atualizando configurações do Neovim"
-   ```
-
-3. Envie para o repositório remoto:
-
-   ```bash
-   git push origin master
-   ```
-
-### Restaurar as configurações em uma nova máquina
-
-Para restaurar suas configurações em uma nova máquina, basta clonar o repositório Git e rodar o comando `:PackerSync` para instalar os plugins novamente.
-
-```bash
-git clone https://github.com/YOUR_USERNAME/nvim-configs.git ~/.config/nvim
-nvim
-:PackerSync
-```
-
-Agora, todas as suas configurações e plugins serão sincronizados com a nova máquina.
-
-## Contribuição
-
-Se você tiver sugestões ou melhorias para as configurações, fique à vontade para abrir uma **issue** ou **pull request**!
-
-## Licença
-
-Este repositório está licenciado sob a **MIT License**. Veja o arquivo LICENSE para mais detalhes.
-
-```
-
-### Explicação do `README.md`:
-
-1. **Pré-requisitos**: Explica a necessidade de ter **Neovim** e **Git** instalados.
-2. **Passo 1 a Passo 6**: Instruções para clonar o repositório, instalar o **Packer**, e usar os plugins.
-3. **Como adicionar/remover plugins**: Passos para adicionar novos plugins ou remover plugins antigos.
-4. **Como configurar atalhos de teclado**: Como personalizar os atalhos de teclado no seu Neovim.
-5. **Backup e Sincronização**: Como versionar suas configurações usando **Git** e sincronizar entre máquinas.
-6. **Restaurar configurações**: Passos para restaurar suas configurações em uma nova máquina.
-7. **Contribuição**: Incentiva a contribuição no repositório com **issues** ou **pull requests**.
-8. **Licença**: Menciona a licença MIT.
-
-Este **README.md** fornece um guia completo de como usar, configurar e manter as configurações do Neovim com o **Packer**!
-```
+Feito com ❤️ por [Rafhael Rocha Gomes](https://www.linkedin.com/in/rafhael-rocha/)
