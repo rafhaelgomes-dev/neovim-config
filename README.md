@@ -1,7 +1,3 @@
-Claro, Rafhael! Aqui está um modelo de `README.md` bem organizado para o seu repositório do Neovim com LazyVim/Packer, explicando passo a passo como instalar e usar sua configuração:
-
----
-
 ````markdown
 # ⚙️ Neovim Config by Rafhael Rocha Gomes
 
