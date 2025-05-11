@@ -35,7 +35,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/seu-repositorio-nvim-config.git ~/.config/nvim
+git clone https://github.com/rafhaelgomes-dev/neovim-config.git ~/.config/nvim
 
 # Abra o Neovim e instale os plugins
 nvim
