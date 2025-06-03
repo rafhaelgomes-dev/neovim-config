@@ -39,6 +39,9 @@ git clone https://github.com/rafhaelgomes-dev/neovim-config.git ~/.config/nvim
 
 # Abra o Neovim e instale os plugins
 nvim
+sudo pacman -Syu
+sudo pacman -S papirus-icon-theme
+sudo pacman -S noto-fonts noto-fonts-emoji ttf-font-awesome ttf-nerd-fonts-symbols
 ```
 
 Dentro do Neovim, rode:
